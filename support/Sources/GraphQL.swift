@@ -299,7 +299,8 @@ public enum Input<T> {
     case value(T?)
 	// Not serializable
     case undefined
-    
+
+    @available(*, deprecated, message: "Use `.value` instead if you know the input wont be `nil`")
     public init(orUndefined optional: Optional<T>)  {
         if let value = optional {
             self = .value(value)
