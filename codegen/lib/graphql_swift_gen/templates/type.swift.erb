@@ -177,7 +177,7 @@ extension <%= schema_name %> {
           <% fields.each do |field| %>
             <% if field.type.unwrap_non_null.kind == 'LIST' && field.type.unwrap.kind == 'OBJECT' %>
               case "<%= field.name %>":
-                return internalGet<%= field.classify_name %>()<% if !field.type.non_null? %> ?? []<% end %>
+                return internalGet<%= field.classify_name %>()<% if !field.type.non_null? %>?.flatMap { $0 } ?? []<% end %>
               <% end %>
           <% end %>
               default:
