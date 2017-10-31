@@ -80,7 +80,7 @@ extension <%= schema_name %> {
 
     <% class_name = type.object? ? type.name : "Unknown#{type.name}" %>
     open class <%= class_name %>: GraphQL.AbstractResponse, GraphQLObject<%= swift_protocols(type) %> {
-      public typealias Query = <%= type.name %>Query
+      public typealias _Query = <%= type.name %>Query
 
       open override func deserializeValue(fieldName: String, value: Any) throws -> Any? {
         let fieldValue = value

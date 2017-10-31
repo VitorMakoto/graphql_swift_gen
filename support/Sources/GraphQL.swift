@@ -279,7 +279,7 @@ public protocol GraphQLQuery {
 }
 
 public protocol GraphQLObject {
-	associatedtype Query
+	associatedtype _Query
 }
 
 public struct SchemaViolationError: Error {
