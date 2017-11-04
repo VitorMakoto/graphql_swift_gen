@@ -28,7 +28,7 @@ extension <%= schema_name %> {
 
       <% if type.name == schema.mutation_root_name %>
         open override var description: String {
-          return "mutation" + super.description
+          return super.description
         }
       <% end %>
       <% fields.each do |field| %>
